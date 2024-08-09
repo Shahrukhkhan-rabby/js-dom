@@ -21,7 +21,16 @@
 <h1>Welcome to my blog website</h1>
     </header>
     <main>
-<section class="blogs">
+<section id="blogs" class="blogs">
+    <header>
+        <h2>Blogs list</h2>
+        <ul id="blog-list">
+            <li>Blog-1</li>
+            <li>Blog-2</li>
+            <li>Blog-3</li>
+            <li>Blog-4</li>  
+        </ul>
+    </header>
     <article class="blog">
         <h3>My Awesome Blog-1</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores iusto fugiat perspiciatis earum corrupti officiis. Suscipit quaerat earum vero ipsum, illo officia eligendi voluptas id nihil, adipisci, asperiores error maxime.</p>
@@ -61,14 +70,50 @@
         third.style.backgroundColor = 'salmon';
         third.style.padding = '10px';
         third.style.marginLeft = '20px'
-        // explore getElementsByClassName
-        const blogs = document.getElementsByClassName('blog')
+     
+
+
+
+        // create and add element by using JS
+        // create the element 
+        const li = document.createElement('li');
+        li.innerText = 'Blog-5';
+        // where to add 
+        const ul = document.getElementById('blog-list');
+
+        // append new element
+        ul.appendChild(li);
+
+        // add article
+        const article = document.createElement('article');
+        article.classList.add('blog');
+        // const h3 = document.createElement('h3');
+        // h3.innerText= 'My Awesome Blog-5';
+        // const p = document.createElement('p');
+        // p.innerText= 'Sequi nemo ad dolorem error nulla aliquam excepturi quidem dolores sunt eaque laborum magnam totam maiores enim, nostrum asperiores aliquid ipsa consectetur eveniet fugit impedit. Illum excepturi velit magnam pariatur!';
+        // article.appendChild(h3);
+        // article.appendChild(p);
+
+        article.innerHTML = `
+        <h3>My Awesome Blog-5</h3>
+        <p>Sequi nemo ad dolorem error nulla aliquam excepturi quidem dolores sunt eaque laborum magnam totam maiores enim, nostrum asperiores aliquid ipsa consectetur eveniet fugit impedit. Illum excepturi velit magnam pariatur!</p>`;
+
+        // parent of article
+        const blogSection = document.getElementById('blogs');
+        blogSection.appendChild(article);
+
+
+
+
+           // explore getElementsByClassName
+           const blogs = document.getElementsByClassName('blog')
         for(const blog of blogs){
            blog.style.border = '2px solid orange';
            blog.style.borderRadius = '10px'
            blog.style.margin = '5px'
            blog.style.padding = '5px'
         }
+
     </script>
 </body>
 </html>
