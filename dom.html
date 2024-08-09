@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+ /* #second-title{
+        background-color: rgba(210, 105, 30, 0.178);
+    } */
+    /* .blog{
+        border: solid orange;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+    } */
+</style>
 </head>
 <body>
     <header>
 <h1>Welcome to my blog website</h1>
     </header>
     <main>
-<section>
-    <article>
+<section class="blogs">
+    <article class="blog">
         <h3>My Awesome Blog-1</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores iusto fugiat perspiciatis earum corrupti officiis. Suscipit quaerat earum vero ipsum, illo officia eligendi voluptas id nihil, adipisci, asperiores error maxime.</p>
     </article>
-    <article>
-        <h3>My Awesome Blog-2</h3>
+    <article id="second-blog" class="blog">
+        <h3 id="second-title">My Awesome Blog-2</h3>
         <p>Nostrum non magnam in tempora porro impedit. Labore voluptate consequatur a, vel exercitationem dolores repellendus accusamus repudiandae accusantium rem praesentium dicta debitis eos laboriosam veritatis voluptatem sapiente incidunt, laborum ea?</p>
     </article>
-    <article>
-        <h3>My Awesome Blog-3</h3>
+    <article class="blog">
+        <h3 id="third-title">My Awesome Blog-3</h3>
         <p>Sequi nemo ad dolorem error nulla aliquam excepturi quidem dolores sunt eaque laborum magnam totam maiores enim, nostrum asperiores aliquid ipsa consectetur eveniet fugit impedit. Illum excepturi velit magnam pariatur!</p>
     </article>
-    <article>
-        <h3>My Awesome Blog-4</h3>
+    <article class="blog">
+        <h3 id="fourth-title">My Awesome Blog-4</h3>
         <p>Sequi nemo ad dolorem error nulla aliquam excepturi quidem dolores sunt eaque laborum magnam totam maiores enim, nostrum asperiores aliquid ipsa consectetur eveniet fugit impedit. Illum excepturi velit magnam pariatur!</p>
     </article>
 </section>
@@ -36,11 +47,27 @@
         // const blogTitles =['h3', 'h3'];
         const blogTitles = document.getElementsByTagName('h3');
         for(const h3 of blogTitles){
-            console.log(h3.innerText);
+            // console.log(h3.innerText);
         }
         const blogDetails = document.getElementsByTagName('p')
         for(const p of blogDetails){
-            console.log(p.innerText);
+            // console.log(p.innerText);
+        }
+        // explore getElementById
+        const secondTitle = document.getElementById('second-title');
+        secondTitle.style.textAlign = 'center';
+        const third = document.getElementById('third-title');
+        third.innerText = 'Title updated by JS'
+        third.style.backgroundColor = 'salmon';
+        third.style.padding = '10px';
+        third.style.marginLeft = '20px'
+        // explore getElementsByClassName
+        const blogs = document.getElementsByClassName('blog')
+        for(const blog of blogs){
+           blog.style.border = '2px solid orange';
+           blog.style.borderRadius = '10px'
+           blog.style.margin = '5px'
+           blog.style.padding = '5px'
         }
     </script>
 </body>
